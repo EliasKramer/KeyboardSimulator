@@ -5,32 +5,42 @@
 #include "keyboard_sim.h"
 int main()
 {
-    /*
-	std::string input;
-	std::cout << "Please enter your move: \n";
-	std::cin >> input;
-    */
-    while (true)
-    {
-        std::cout << (is_key_down(VK_KEY_1) ? "1 is down" : "1 is up") << std::endl;
-		//wait for 1 second
-		Sleep(1000);
-    }
+
+    std::string input;
+    std::cout << "Please enter your move: \n";
+    press_key_short(VK_KEY_5);
+    press_key_short(VK_KEY_5);
+    press_key(VK_CONTROL);
+    press_key_short(VK_KEY_A);
+    press_key_short(VK_KEY_C);
+    press_key_short(VK_KEY_V);
+    release_key(VK_CONTROL);
+    press_key_short(VK_KEY_K);
+    press_key_short(VK_KEY_K);
+    press_key_short(VK_KEY_K);
+    //press_key_short(VK_RETURN);
+    std::cin >> input;
+    std::cout << "You entered: " << input << std::endl;
+
     /*
     static const int kExitOk = 0;
     static const int kExitError = 1;
-	
-    try
+    while (true)
     {
-        std::cout << GetClipboardText() << std::endl;
-        return kExitOk;
-    }
-    catch (const std::exception& e)
-    {
-        std::cerr << "*** ERROR: " << e.what() << std::endl;
-        return kExitError;
-    }
-    */
+        if (is_key_down(VK_KEY_0))
+        {
+            try
+            {
+                std::cout << GetClipboardText() << std::endl;
+                return kExitOk;
+            }
+            catch (const std::exception& e)
+            {
+                std::cerr << "*** ERROR: " << e.what() << std::endl;
+                return kExitError;
+            }
+        }
+    }*/
 }
 /*
 void ShowDesktop()
